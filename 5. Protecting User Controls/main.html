@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XSS Demo</title>
+</head>
+
+<body>
+
+<input id="nameInput" placeholder="Enter your name">
+<button onclick="showName()">Submit</button>
+
+<div id="output"></div> 
+
+<script>
+function showName() {
+
+    const name = document.getElementById("nameInput").value;
+
+    document.getElementById("output").textContent =
+        "Welcome, " + name;
+}
+</script>
+
+</body>
+</html>
+
+// QUESTION:
+    // Why does the alert run?
+    // Because XSS thinks the input is HTML code from the innerHTML and since x isn't a real image and the input shouldn't be an image, alert is run
